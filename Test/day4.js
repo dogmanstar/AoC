@@ -41,6 +41,13 @@ class board {
     }
 
     testForWin() {
+        // Looping solution with left-shift operator. Every iteration:
+        // 31 (000...00011111) is left-shifted (i * 5) times, e.g. when i == 0,
+        // this stays 31. When i == 1, then 1 * 5 is 5, so 000...00011111 becomes
+        // 000...11111000.
+        //for (let i = 0; i < 10; i++) {
+        //    if ((this.calledBitMap & (31 << (i * 5))) == (31 << (i * 5))) { return true; }
+        //}
         if ((this.calledBitMap & 31) === 31) {
             return true;
         }
